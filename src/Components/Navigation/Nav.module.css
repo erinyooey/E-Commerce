@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(27, 23, 23);
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    align-items: center;
+}
+
+.navlink{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.navlink:hover{
+    color: antiquewhite;
+}
