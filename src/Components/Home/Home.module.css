@@ -1,0 +1,36 @@
+.home{
+    margin-top: 120px;
+}
+
+.search{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    right: 46px;
+   
+}
+
+.searchInput{
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width: 70%;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.searchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.searchIcon{
+    width: 30px;
+    height: 40px;
+}

@@ -1,0 +1,22 @@
+.title{
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 12%;
+}
+
+form{
+    max-width: 600px;
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding around the form */
+}
+
+form .form-group label{
+    margin-bottom: 5px;
+}
+
+
+form .btn btn-primary{
+    background-color: white;
+    border: none; /* Remove the default border */
+    padding: 10px 20px; /* Adjust the padding */
+}

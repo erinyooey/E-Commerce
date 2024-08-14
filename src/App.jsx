@@ -13,6 +13,7 @@ import Home from './Components/Home/Home'
 function App() {
   return (
     <>
+    <div style = {{backgroundColor: 'rgb(157,153,153)', minHeight: '100vh'}}>
     <Router>
       < Nav />
       <Routes>
@@ -26,6 +27,7 @@ function App() {
         <Route path='/checkout' element={<Checkout />}></Route>
       </Routes>
       </Router>
+    </div>
     </>
   )
 }

@@ -1,7 +1,14 @@
 .navbar{
     display: flex;
+    box-sizing: border-box;
     justify-content: space-between;
-    background-color: rgb(27, 23, 23);
+    padding: 10px 20px;
+    background-color: rgb(59, 50, 50);
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    z-index: 1000;
 }
 
 .menu{
@@ -9,14 +16,32 @@
     gap: 30px;
     margin: 0;
     align-items: center;
+    margin-left: 35%;
+}
+
+.logoGroup{
+    margin-left: 2rem;
+    flex-direction: row;
+
+}
+
+.logoTitle{
+    width: 100px;
+    margin-right: 105px;
+}
+
+.xlogo{
+    width: 30px;
+    margin-left: -105px;
 }
 
 .navlink{
     padding: 10px;
     text-decoration: none;
+    display: inline-block;
     color: white;
 }
 
 .navlink:hover{
-    color: antiquewhite;
+    color: rgb(157, 147, 210);
 }
