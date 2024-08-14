@@ -28,8 +28,8 @@ export default function Nav() {
         <Link to="/" className={styles.navlink}>
           <h4>Home</h4>
         </Link>
-        <Link to="/account" className={styles.navlink}>
-          <h4>Account</h4>
+        <Link to="/register" className={styles.navlink}>
+          <h4>Register</h4>
         </Link>
         <Link to="/login" className={styles.navlink}>
           <h4>Login</h4>
