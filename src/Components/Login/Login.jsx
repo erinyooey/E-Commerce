@@ -2,8 +2,12 @@ import {useNavigate} from "react-router-dom"
 import { useState } from "react"
 // using module css
 import styles from "./Login.module.css"
+import { useDispatch } from "react-redux"
 
 export default function Login() {
+  const dispatch = useDispatch() // modifying state
+  // use selector is getting state
+
   const [login, setLogin] = useState({
     email: "",
     password: "",

@@ -9,11 +9,14 @@ import Cart from './Components/Cart/Cart'
 import Checkout from './Components/Checkout/Checkout'
 import './App.css'
 import Home from './Components/Home/Home'
+import { Provider } from "react-redux";
+import store from './app/store'
 
 function App() {
   return (
     <>
     <div style = {{backgroundColor: 'rgb(157,153,153)', minHeight: '100vh'}}>
+    <Provider store={store}>
     <Router>
       < Nav />
       <Routes>
@@ -27,6 +30,7 @@ function App() {
         <Route path='/checkout' element={<Checkout />}></Route>
       </Routes>
       </Router>
+    </Provider>
     </div>
     </>
   )

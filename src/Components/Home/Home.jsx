@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router'
+import Data from '../../app/Data'
 import { useState } from 'react'
 import { useEffect } from 'react'
 // using module css
@@ -19,6 +20,9 @@ export default function Home() {
         <button type='button' className={styles.search} onClick={handleSearch}>  
         <img src={search} alt="" className={styles.searchIcon}/>
         </button>
+      </div>
+      <div>
+        <Data />
       </div>
     </div>
   )

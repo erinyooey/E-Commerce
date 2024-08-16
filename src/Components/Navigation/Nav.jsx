@@ -22,7 +22,7 @@ export default function Nav() {
     <div className={styles.navbar}>
       <div className={styles.logoGroup}>
         <img src={title} alt="logoTitle" className={styles.logoTitle}/>
-        <img src={xlogo} alt="xlogo" className={styles.xlogo}/>
+        {/* <img src={xlogo} alt="xlogo" className={styles.xlogo}/> */}
       </div>
       <ul className={styles.menu}>
         <Link to="/" className={styles.navlink}>
