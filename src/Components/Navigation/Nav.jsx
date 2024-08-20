@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import title from '../../assets/title.svg'
 import logo from '../../assets/logo.svg'
-import xlogo from '../../assets/x-logo.avif'
+import xlogo from '../../assets/x-logo.svg'
 
 // using module css
 import styles from './Nav.module.css'
@@ -22,7 +22,7 @@ export default function Nav() {
     <div className={styles.navbar}>
       <div className={styles.logoGroup}>
         <img src={title} alt="logoTitle" className={styles.logoTitle}/>
-        {/* <img src={xlogo} alt="xlogo" className={styles.xlogo}/> */}
+        <img src={xlogo} alt="xlogo" className={styles.xlogo}/>
       </div>
       <ul className={styles.menu}>
         <Link to="/" className={styles.navlink}>
@@ -33,9 +33,6 @@ export default function Nav() {
         </Link>
         <Link to="/login" className={styles.navlink}>
           <h4>Login</h4>
-        </Link>
-        <Link to="/products/:id" className={styles.navlink}>
-          <h4>Products</h4>
         </Link>
         <Link to="/cart" className={styles.navlink}>
           <h4>Cart</h4>

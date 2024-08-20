@@ -3,15 +3,21 @@ import { useState } from "react"
 // using module css
 import styles from "./Login.module.css"
 import { useDispatch } from "react-redux"
+import { useLoginMutation } from "./LoginSlice"
 
 export default function Login() {
   const dispatch = useDispatch() // modifying state
   // use selector is getting state
 
+  const navigate = useNavigate()
+
   const [login, setLogin] = useState({
     email: "",
     password: "",
   })
+
+  const [loginMutation, {isLoading}] = useLoginMutation()
+  console.log(" use login mutation: ", useLoginMutation())
 
   const update = (e) => {
     e.preventDefault()
@@ -22,16 +28,20 @@ export default function Login() {
   }
 
   // submitting the form
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
     try {
-      let submission = false;
-      // submission = await 
+      const response = await loginMutation(login).unwrap()
+
+      if(response.token){
+        sessionStorage.setItem('token', response.token)
+        navigate('/') // redirect to home page after login
+      }
     } catch (error) {
-      console.log(error)
+      console.error("Login failed: ", error)
+      alert("Login failed. Please check your credentials")
     }
-    console.log(login)
-  }
+  }       
 
   return (
     <>
@@ -46,6 +56,7 @@ export default function Login() {
         onChange={update}
         placeholder="Enter Email"
         className="form-control"
+        disabled={isLoading}
         />
         </div>
         <div className="form-group">
@@ -55,9 +66,10 @@ export default function Login() {
         value={login.password}
         onChange={update}
         placeholder="Enter password" className="form-control"
+        disabled={isLoading}
         />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary" disabled={isLoading}>{isLoading ? "Submitting...": "Submit"}</button>
       </form>
     </>
   )

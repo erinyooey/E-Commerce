@@ -1,6 +1,8 @@
 import { useState } from "react"
 // using module css
 import styles from '../Login/Login.module.css'
+import { useRegisterMutation } from "./RegisterSlice"
+import { useNavigate } from "react-router"
 
 
 export default function Register() {
@@ -11,6 +13,10 @@ export default function Register() {
     password: "",
   })
 
+  const [error, setError] = useState(null)
+  const[registerMutation, {isLoading}] = useRegisterMutation()
+  const navigate = useNavigate()
+
   const update = (e) => {
     e.preventDefault()
     setRegister((prev)=>({
@@ -20,15 +26,19 @@ export default function Register() {
   }
 
   // submitting the form
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
     try {
-      let submission = false;
-      // submission = await 
+      const response = await registerMutation(register).unwrap()
+      if(response.token){
+        navigate("/login")
+      } else{
+        console.error("Registration incomplete: ", response.message)
+      }
     } catch (error) {
-      console.log(error)
+      console.error("Registration failed: ", error)
+      setError(error?.data?.message || "Registration failed")
     }
-    console.log(register)
   }
 
   return (
@@ -44,6 +54,7 @@ export default function Register() {
         onChange={update}
         placeholder="First Name"
         className="form-control"
+        disabled={isLoading}
         />
         </div>
         <div className="form-group">
@@ -55,6 +66,7 @@ export default function Register() {
         onChange={update}
         placeholder="Last Name"
         className="form-control"
+        disabled={isLoading}
         />
         </div>
       <div className="form-group">
@@ -66,6 +78,7 @@ export default function Register() {
         onChange={update}
         placeholder="Enter Email"
         className="form-control"
+        disabled={isLoading}
         />
         </div>
         <div className="form-group">
@@ -75,9 +88,11 @@ export default function Register() {
         value={register.password}
         onChange={update}
         placeholder="Enter password" className="form-control"
+        disabled={isLoading}
         />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        {error && <p className="error">{error}</p>}
+        <button type="submit" className="btn btn-primary" disabled={isLoading}>{isLoading ? "Submitting..." : "Submit"}</button>
       </form>
     </div>
   )
