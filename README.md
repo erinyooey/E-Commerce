@@ -7,9 +7,13 @@ ConverseX is a full-stack e-commerce web application focused on shopping for Con
 ### **Deployed URLs**
 - **Frontend:** [Netlify](https://66c40ec034adde9487ce8ec8--lucent-scone-5c8186.netlify.app/)
 - **Backend:** [Backend Repo URL](https://github.com/erinyooey/Capstone-Backend)
-> **Note:** The deployed version may take some time to load data on the frontend due to server response time. For a smoother experience, you may prefer running the application locally. Instructions are provided below.
+
+### **Important Notes**
+- The frontend is fully deployed and accessible via the Netlify link above.
+- To fully experience the app, the backend must be run locally.
 
 ### **Local Setup Instructions**
+If you wish to run the project locally:
 
 1. **Clone the repository:**
    git clone https://github.com/erinyooey/E-Commerce.git
