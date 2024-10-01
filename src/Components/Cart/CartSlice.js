@@ -1,6 +1,7 @@
+import { createSlice } from "@reduxjs/toolkit";
 import { api } from "../../api/api";
 
-export const cartApi = api.injectEndpoints({
+const cartApi = api.injectEndpoints({
     endpoints: (builder) => ({
         addToCart: builder.mutation({
             query: ({productId, quantity}) => ({
@@ -13,7 +14,7 @@ export const cartApi = api.injectEndpoints({
     })
 })
 
-export const createCartApi = api.injectEndpoints({
+const createCartApi = api.injectEndpoints({
     endpoints: (builder) => ({
         createCart: builder.mutation({
             query: () => ({
@@ -25,7 +26,7 @@ export const createCartApi = api.injectEndpoints({
     })
 })
 
-export const updateCartApi = api.injectEndpoints({
+const updateCartApi = api.injectEndpoints({
     endpoints: (builder) => ({
         updateCart: builder.mutation({
             query: ({productId, cartId, quantity}) => ({
@@ -37,6 +38,32 @@ export const updateCartApi = api.injectEndpoints({
         })
     })
 })
+
+const getCartApi = api.injectEndpoints({
+    endpoints: (builder) => ({
+        showCart: builder.query({
+            query: () => ({
+                url: "api/cart/",
+                method: "GET",
+                headers: {
+                    "Content-Type":
+                    "application/json",
+                },
+            }),
+            provideTags: ["Cart"]
+        })
+    })
+})
+
+const cartSlice = createSlice({
+    name: "cart",
+    initialState: {
+        cart: [],
+    }
+})
+
+export default cartSlice.reducer
+export const { useShowCartQuery } = getCartApi
 
 
 export const { useAddToCartMutation } = cartApi

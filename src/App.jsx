@@ -15,7 +15,7 @@ import store from './app/store'
 function App() {
   return (
     <>
-    <div style = {{backgroundColor: 'rgb(157,153,153)', minHeight: '100vh'}}>
+    <div style = {{backgroundColor: '#F5F5F5', minHeight: '100vh'}}>
     <Provider store={store}>
     <Router>
       < Nav />

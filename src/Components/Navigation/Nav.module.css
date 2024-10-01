@@ -1,9 +1,9 @@
 .navbar{
+    background-color: white;
     display: flex;
     box-sizing: border-box;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: rgb(59, 50, 50);
     position: fixed;
     width: 100%;
     height: 120px;
@@ -26,7 +26,7 @@
 }
 
 .logoTitle{
-    width: 100px;
+    width: 110px;
     margin-right: 105px;
 }
 
@@ -39,7 +39,7 @@
     padding: 10px;
     text-decoration: none;
     display: inline-block;
-    color: white;
+    color: black;
 }
 
 .navlink:hover{

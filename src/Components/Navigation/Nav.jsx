@@ -2,9 +2,7 @@ import { Link } from "react-router-dom"
 import "../../App.css"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import title from '../../assets/title.svg'
-import logo from '../../assets/logo.svg'
-import xlogo from '../../assets/x-logo.svg'
+import logo from '../../assets/logo-black.png'
 
 // using module css
 import styles from './Nav.module.css'
@@ -21,8 +19,7 @@ export default function Nav() {
   return (
     <div className={styles.navbar}>
       <div className={styles.logoGroup}>
-        <img src={title} alt="logoTitle" className={styles.logoTitle}/>
-        <img src={xlogo} alt="xlogo" className={styles.xlogo}/>
+        <img src={logo} alt="logoTitle" className={styles.logoTitle}/>
       </div>
       <ul className={styles.menu}>
         <Link to="/" className={styles.navlink}>

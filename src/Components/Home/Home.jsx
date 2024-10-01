@@ -6,8 +6,6 @@ import styles from './Home.module.css'
 import search from '../../assets/search.svg'
 import { useAddToCartMutation, useCreateCartMutation, useUpdateCartMutation } from '../Cart/CartSlice'
 
-
-
 export default function Home() {
   const [data, setData] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
