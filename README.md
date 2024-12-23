@@ -1,8 +1,8 @@
-# ConverseX
+# Lace Up 
 
 ### **Project Overview**
 
-ConverseX is a full-stack e-commerce web application focused on shopping for Converse shoes. It features a product listing, detailed product pages, and a cart functionality that allows users to add items to their cart. The application is built using React and Redux on the frontend and Node.js with Express on the backend, utilizing Prisma for database management.
+Lace Up is a full-stack e-commerce web application focused on shopping for Converse shoes. It features a product listing, detailed product pages, and a cart functionality that allows users to add items to their cart. The application is built using React and Redux on the frontend and Node.js with Express on the backend, utilizing Prisma for database management.
 
 ### **Deployed URLs**
 - **Frontend:** [Netlify](https://66c40ec034adde9487ce8ec8--lucent-scone-5c8186.netlify.app/)
